@@ -15,3 +15,14 @@ Divide o preço do álcool pelo preço da gasolina:
 flutter create .
 flutter run
 ```
+
+## Exercício 3 - Desafio da Média
+
+Fica na pasta `desafio_media`. Digite três valores inteiros e clique em
+**Calcule a Média**: o resultado aparece na mesma tela.
+
+```bash
+cd desafio_media
+flutter create .
+flutter run
+```
