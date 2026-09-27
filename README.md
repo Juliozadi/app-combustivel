@@ -16,13 +16,7 @@ flutter create .
 flutter run
 ```
 
-## Exercício 3 - Desafio da Média
+## Calcule a Média (Exercício 3)
 
-Fica na pasta `desafio_media`. Digite três valores inteiros e clique em
-**Calcule a Média**: o resultado aparece na mesma tela.
-
-```bash
-cd desafio_media
-flutter create .
-flutter run
-```
+O botão **Calcule a Média** calcula a média dos valores digitados
+(álcool + gasolina, dividido por 2) e mostra o resultado na mesma tela.

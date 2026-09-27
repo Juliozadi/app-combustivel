@@ -20,6 +20,11 @@ class Combustivel {
       return 'Abasteça com Gasolina';
     }
   }
+
+  // Método que faz o cálculo da média dos valores
+  double calcularMedia() {
+    return (alcool + gasolina) / 2;
+  }
 }
 
 class AppCombustivel extends StatefulWidget {
@@ -33,6 +38,7 @@ class _AppCombustivelState extends State<AppCombustivel> {
   TextEditingController alcoolController = TextEditingController();
   TextEditingController gasolinaController = TextEditingController();
   String resultado = '';
+  String media = '';
 
   void calcular() {
     double alcool = double.parse(alcoolController.text);
@@ -42,6 +48,18 @@ class _AppCombustivelState extends State<AppCombustivel> {
 
     setState(() {
       resultado = combustivel.calcular();
+    });
+  }
+
+  // Função chamada ao clicar em "Calcule a Média"
+  void calcularMedia() {
+    double alcool = double.parse(alcoolController.text);
+    double gasolina = double.parse(gasolinaController.text);
+
+    Combustivel combustivel = Combustivel(alcool, gasolina);
+
+    setState(() {
+      media = 'Média: R\$ ${combustivel.calcularMedia().toStringAsFixed(2)}';
     });
   }
 
@@ -70,6 +88,13 @@ class _AppCombustivelState extends State<AppCombustivel> {
             ),
             const SizedBox(height: 20),
             Text(resultado, style: const TextStyle(fontSize: 20)),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: calcularMedia,
+              child: const Text('Calcule a Média'),
+            ),
+            const SizedBox(height: 20),
+            Text(media, style: const TextStyle(fontSize: 20)),
           ],
         ),
       ),
